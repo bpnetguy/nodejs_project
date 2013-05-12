@@ -1,4 +1,4 @@
-define(['backbone', 'ViewManager', 'router', 'views/menu/Menu'], function(Backbone, ViewManager, router, Menu) {
+define(['backbone', 'ViewManager', 'router'], function(Backbone, ViewManager, router) {
 
     return {
         initialize: function() {
@@ -6,8 +6,7 @@ define(['backbone', 'ViewManager', 'router', 'views/menu/Menu'], function(Backbo
             var viewManager = new ViewManager({el:el});
             router.setViewManager(viewManager);
 
-            var menu = new Menu();
-            $('body').append(menu.el).append(el);
+            $('body').append(el);
             Backbone.history.start();
         }
     }

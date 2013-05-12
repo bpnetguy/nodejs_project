@@ -12,7 +12,7 @@ define(['backbone', 'models/GPIO'], function (Backbone, GPIOModel){
             command:"ls"
         },
         model:GPIOModel,
-        url:"../gpio/list"
+        url:"./gpio/list"
     });
     return GPIOCollection;
 });

@@ -3,6 +3,8 @@ var express = require('express'),
   , http = require('http')
   , server = http.createServer(app);
 
+var base = "";
+
 
 app.configure(function(){
     app.use(express.static(__dirname + '/web'));
@@ -16,7 +18,7 @@ app.configure(function(){
 
 var gpio  = require('./gpio');
 
-app.get('/gpio/list', gpio.list);
-app.get('/gpio/toggle/:pin', gpio.toggle);
+app.get(base + '/gpio/list', gpio.list);
+app.get(base + '/gpio/toggle/:pin', gpio.toggle);
 
 server.listen(process.env.PORT || 3000);

@@ -11,7 +11,7 @@ define(['backbone'], function (Backbone){
         defaults: {
         },
 	url: function() {
-		return "../gpio/toggle/" + this.get('id');
+		return "./gpio/toggle/" + this.get('id');
 	}
     });
     return GPIO;

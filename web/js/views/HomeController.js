@@ -1,5 +1,5 @@
-define(['backbone', 'collections/GPIO', './GPIO' ]
-, function (Backbone, GPIOCollection, GPIOView){
+define(['jquery','backbone', 'collections/GPIO', './GPIO' ]
+, function ($, Backbone, GPIOCollection, GPIOView){
     var HomeController = Backbone.View.extend({
         id:"homeController",
 	className: "swiper-wrapper",
@@ -12,6 +12,10 @@ define(['backbone', 'collections/GPIO', './GPIO' ]
             this.collection.on("sync", this.done,this);
             this.collection.on("error", this.error,this);
 	    this.collection.fetch();
+            var self = this;
+            $(function(){
+                $(document).on('keydown',function(evt) {self.keyPress(evt)});
+            });
 
         },
 	toggle: function(evt) {
@@ -26,6 +30,13 @@ define(['backbone', 'collections/GPIO', './GPIO' ]
 			gpioView.render();
 			this.$el.append(gpioView.$el);
 	},
+        keyPress: function(evt) {
+            if(evt.keyCode === 39) {
+                this.swiper.swipeNext();
+            } else if(evt.keyCode === 37) {
+                this.swiper.swipePrev();
+            }
+        },
 	done: function(id) {
 		var self = this;
 		/**
@@ -35,13 +46,12 @@ define(['backbone', 'collections/GPIO', './GPIO' ]
 			self.$el.append(gpioView.$el);
 		});
 		*/
-		if(this.swiped) {
+		if(this.swiper) {
 		} else {
-			$('.swiper-container').swiper({
+			this.swiper=$('.swiper-container').swiper({
 				mode:'horizontal',
 				loop:false
 			});
-			this.swiped=true;
 		}
 	},
         render: function() {

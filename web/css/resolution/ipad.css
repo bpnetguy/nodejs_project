@@ -4,6 +4,7 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (-webkit-min-device-pixel-ratio: 2) {
     /* STYLES GO HERE */
+        background-color: red; 
 
 }
 
@@ -16,7 +17,6 @@ and (-webkit-min-device-pixel-ratio: 2) {
     .swiper-container, .swiper-slide {
         width: 900px;
         height: 500px;
-        /** background-color: #aaa; */
     }
 }
 
@@ -34,6 +34,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (-webkit-min-device-pixel-ratio: 1) {
+        background-color: red; 
     /* STYLES GO HERE */
 }
 
@@ -43,6 +44,7 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : landscape)
 and (-webkit-min-device-pixel-ratio: 1) {
+        background-color: red; 
     /* STYLES GO HERE */
 }
 

@@ -20,5 +20,7 @@ var gpio  = require('./gpio');
 
 app.get(base + '/gpio/list', gpio.list);
 app.get(base + '/gpio/toggle/:pin', gpio.toggle);
+app.get(base + '/gpio/on/:pin', gpio.on);
+app.get(base + '/gpio/off/:pin', gpio.off);
 
 server.listen(process.env.PORT || 3000);

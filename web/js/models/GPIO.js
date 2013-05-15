@@ -9,9 +9,13 @@
 define(['backbone'], function (Backbone){
     var GPIO = Backbone.Model.extend({
         defaults: {
+		name: "No Name",
+		description: "No Description",
+		status: "on"
         },
 	url: function() {
-		return "./gpio/toggle/" + this.get('id');
+		var status = (this.get('status') === "off" ? "on" : "off");
+		return "./gpio/"+ status+ "/" + this.get('id');
 	}
     });
     return GPIO;

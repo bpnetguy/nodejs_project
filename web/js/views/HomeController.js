@@ -39,7 +39,7 @@ define(['backbone', 'collections/GPIO', './GPIO' ]
 		} else {
 			$('.swiper-container').swiper({
 				mode:'horizontal',
-				loop: true
+				loop:false
 			});
 			this.swiped=true;
 		}

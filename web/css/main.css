@@ -1,2 +1,5 @@
 @import 'body.css';
 @import 'swiper.css';
+@import 'resolution/iphone.css';
+@import 'resolution/iphone-retina.css';
+@import 'resolution/ipad.css';

@@ -1,0 +1,72 @@
+/*iPhone 5 in portrait & landscape*/
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+    /* STYLES GO HERE */
+}
+
+/*iPhone 5 in landscape*/
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+    /* STYLES GO HERE */
+}
+
+/*iPhone 5 in portrait*/
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+    /* STYLES GO HERE */
+}
+
+/*iPhone 2G, 3G, 4, 4S Media Queries*/
+
+/*iPhone 2G-4S in portrait & landscape*/
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    /* STYLES GO HERE */
+}
+
+/*iPhone 2G-4S in landscape*/
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px)
+and (orientation : landscape) {
+    /* STYLES GO HERE */
+}
+
+/*iPhone 2G-4S in portrait*/
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px)
+and (orientation : portrait) {
+    /* STYLES GO HERE */
+}
+
+/*iPhone 5 Resolution*/
+/*Screen Width = 320px (CSS Pixels)*/
+/*Screen Height = 568px (CSS Pixels)*/
+
+/*Screen Width = 640px (Actual Pixels)*/
+/*Screen Height = 1136px (Actual Pixels)*/
+
+/*Device-pixel-ratio: 2*/
+/*iPhone 4/4S Resolution*/
+/*Screen Width = 320px (CSS Pixels)*/
+/*Screen Height = 480px (CSS Pixels)*/
+
+/*Screen Width = 640px (Actual Pixels)*/
+/*Screen Height = 960px (Actual Pixels)*/
+
+/*Device-pixel-ratio: 2*/
+/*iPhone 2G/3G/3GS Resolution*/
+/*Screen Width = 320px (CSS Pixels)*/
+/*Screen Height = 480px (CSS Pixels)*/
+
+/*Screen Width = 320px (Actual Pixels)*/
+/*Screen Height = 480px (Actual Pixels)*/
+
+/*Device-pixel-ratio: 1*/

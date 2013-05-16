@@ -16,11 +16,11 @@ app.configure(function(){
     app.use(express.session({secret: 'secret', key: 'express.sid'}));
 });
 
+require('./siri');
 var gpio  = require('./gpio');
 
 app.get(base + '/gpio/list', gpio.list);
-app.get(base + '/gpio/toggle/:pin', gpio.toggle);
-app.get(base + '/gpio/on/:pin', gpio.on);
-app.get(base + '/gpio/off/:pin', gpio.off);
+app.get(base + '/gpio/on/:pin', gpio.RESTOn);
+app.get(base + '/gpio/off/:pin', gpio.RESTOff);
 
 server.listen(process.env.PORT || 3000);

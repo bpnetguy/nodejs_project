@@ -9,6 +9,7 @@
 body {
     margin: 10px 10px;
     font-family: arial;
+    background-color:black;
 }
 
 .button {
@@ -29,12 +30,13 @@ body {
 
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
-    border-radius: 6px;
+    border-radius: 40px;
+    text-transform:capitalize;
 
     border: 1px solid #dcdcdc;
 
     display: inline-block;
-    color: #666666;
+    color: rgba(0,0,0,.5);
     font-family: arial;
     font-size: 90px;
     font-weight: bold;
@@ -69,8 +71,8 @@ body {
 
 .componentName {
     font-size: 54px;
-    color: #444;
-    margin: 60px 0px 0px 0px;
+    color: white;
+    margin: 60px 0px 60px 0px;
     font-weight: bold;
 }
 
@@ -85,4 +87,17 @@ canvas {
     position: absolute;
     left: 50%;
     top: 50%;
+}
+
+.device {
+    margin: auto;
+    padding: 20px 20px;
+    border-radius: 20px;
+    max-width: 90%;
+}
+.on {
+/*
+    border: 5px solid #ffff00;
+*/
+    color: rgba(0,100,0,.7);
 }

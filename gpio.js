@@ -72,21 +72,43 @@ exports.list = function(req, res){
 };
 
 exports.turnOn = function(name, cb) {
-   var dataItem = _.where(data, {name: name})[0];
-   on(dataItem.id, function(pinData) {
-      cb(pinData.status);
+   var dataItems = _.where(data, {name: name});
+   _.each(dataItems, function(dataItem) {
+      on(dataItem.id, function(pinData) {
+         cb(pinData.status);
+      });
    });
 
+}
+
+var recursiveOff = function(dataItems, i) {
+   if(i === dataItems.length ) {
+      return;
+   }
+   console.log(i + " " + dataItems[i].id)
+   off(dataItems[i].id, function(pinData) {
+      setTimeout(function() {
+         recursiveOff(dataItems, i+1);
+      },1000);
+   });
 }
 /* 
  * name: Device Name
  * cb(status="on" || "off")
  */
 exports.turnOff = function(name, cb) {
-   var dataItem = _.where(data, {name: name})[0];
-   off(dataItem.id, function(pinData) {
-      cb(pinData.status);
-   });
+   var dataItems = _.where(data, {name: name});
+   if(name === "Everything") {
+      dataItems = _.where(data, {status:"on"});
+      recursiveOff(dataItems, 0);
+      cb("off");
+   } else {
+      _.each(dataItems, function(dataItem) {
+         off(dataItem.id, function(pinData) {
+            cb(pinData.status);
+         });
+      });
+   }
 
 }
 exports.RESTOn = function(req, res){

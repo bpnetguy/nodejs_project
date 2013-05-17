@@ -30,6 +30,8 @@ siri.createServer(function(cmd, dev) {
 	handleSwitch(cmd, "Dining Room", function(msg){dev.end(msg)});
     } else if(/masterbedroom/.test(cmd)) {
 	handleSwitch(cmd, "Master Bedroom", function(msg){dev.end(msg)});
+    } else if(/everything/.test(cmd)) {
+	handleSwitch(cmd, "Everything", function(msg){dev.end(msg)});
     } else if(/garage/.test(cmd)) {
 	handleSwitch(cmd, "Garage", function(msg){dev.end(msg)});
     } else if(/livingroom/.test(cmd)) {

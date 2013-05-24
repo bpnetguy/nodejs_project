@@ -20,7 +20,10 @@ define(['jquery','backbone', 'collections/GPIO', './GPIO' ]
         },
 	toggle: function(evt) {
 		var id = evt.target.getAttribute('id');
-		this.collection.get(id).fetch();
+		$('#overlay')[0].style['display'] = "block";
+		this.collection.get(id).fetch({success: function() {
+			$('#overlay')[0].style['display'] = "none";
+                   }});
 	},
 	error: function() {
 	    console.error("something is wrong");

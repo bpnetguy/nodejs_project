@@ -1,6 +1,9 @@
 var siri = require("siri");
 var gpio = require('./gpio');
+var exec = require('child_process').exec;
 console.log("Starting siri..");
+
+
 
 var on = /on|open/;
 var off = /off|close/;
@@ -36,6 +39,12 @@ siri.createServer(function(cmd, dev) {
 	handleSwitch(cmd, "Garage", function(msg){dev.end(msg)});
     } else if(/livingroom/.test(cmd)) {
 	handleSwitch(cmd, "Living Room", function(msg){dev.end(msg)});
+    } else if(/reboot/.test(cmd)) {
+        exec("/sbin/reboot");
+        dev.end("Raspberry Pi rebooting");
+    } else if(/restartxbmc/.test(cmd)) {
+        exec("/etc/init.d/xbmc restart");  
+        dev.end("XBMC restarting");
     } else {
         dev.proxy();
     }
